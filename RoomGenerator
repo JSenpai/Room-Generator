@@ -1,0 +1,62 @@
+#IMPORTING IS A BITCH
+
+import random
+from random import randint
+from random import choice
+
+# Room types and putting them into a array
+
+ROOMS = ['Empty Room', 'Monster Room', 'Trap Room', 'Monster and Trap Room', 'Treasure Room', 'Materials Room', 'Puzzle Room', 'Warp Portal', 'Lore Room']
+
+#Door Types
+
+DOORA = ['Locked Door', 'Arcane Door', 'Arcane locked Door', 'Strength Door', 'Regular Door', 'Nature Door', 'Boss Door']
+DOORB = ['Locked Door', 'Arcane Door', 'Arcane locked Door', 'Strength Door', 'Regular Door', 'Nature Door']
+
+#Declared GOD DAMN GLOOBALLYDOOS
+
+room = str(0)
+doors = int(0)
+doortypeA = str(0)
+doortypeB = str(0)
+count = int(0)
+
+#Declaring functions cause why not...?
+
+def RanROOM():
+	room = random.choice(ROOMS)
+	print('Room type: ', room)
+def RanDA():
+	doortype1 = random.choice(DOORA)
+	if doortypeA != 'Boss Door':
+		print(doortypeA)
+	else:
+		doortypeB = random.choice(DOORB)
+		print(doortypeB)
+def RanDB():
+	doortype2 = random.choice(DOORB)
+	print(doortypeB)
+def RanND():
+	doors = random.randint(0, 3)
+	print('There are ', doors, 'doors are in this room.')
+def RanDOOR1():
+	for i in range(doors):
+		RanDA()
+def RanDOOR2():
+	for i in range(doors):
+		RanDB()
+
+
+	
+	
+
+#Chooses random type of room
+Question = input('Does boss room exist already in 5 room run? ')
+if Question == 'No' or 'no' or 'n':
+	RanROOM()
+	RanND()
+	RanDOOR1()
+else:
+	RanROOM()
+	RanND()
+	RanDOOR2()
